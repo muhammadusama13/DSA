@@ -18,22 +18,55 @@ class Linkedlist {
     createNode(node) {
         this.tail.next = node
         this.tail = node
+        this.count++
     }
+
+    displayNodes() {
+        let temp = this.head
+        while (temp) {
+            console.log(temp.value)
+            // console.log(temp)
+            temp = temp.next;
+        }
+    }
+
+    addAtNumber(number, node) {
+        let temp = this.head
+        let count = 0;
+        while (temp) {
+            if (number == count) {
+                console.log('temp', temp)
+                console.log('new node', node)
+            }
+
+            if (number == count) {
+                node.next = temp.next
+                temp.next = node
+                // if (node.next == null) {
+                //     this.tail = node
+                // }
+            }
+            temp = temp.next
+            count++
+        }
+
+    }
+
+
 }
 
 
-let linkedlist = new Linkedlist(number)
+let linkedlist = new Linkedlist(1)
 
-linkedlist.createNode(new Node(number++))
-linkedlist.createNode(new Node(number++))
-// linkedlist.createNode(new Node(number++))
-// linkedlist.createNode(new Node(number++))
-// linkedlist.createNode(new Node(number++))
-// linkedlist.createNode(new Node(number++))
+linkedlist.createNode(new Node(2))
+linkedlist.createNode(new Node(3))
+linkedlist.createNode(new Node(4))
+linkedlist.createNode(new Node(5))
+
+linkedlist.addAtNumber(1, new Node(9))
 
 
-
-console.log(linkedlist)
+linkedlist.displayNodes()
 
 
 
