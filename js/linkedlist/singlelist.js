@@ -34,10 +34,10 @@ class Linkedlist {
         let temp = this.head
         let count = 0;
         while (temp) {
-            if (number == count) {
-                console.log('temp', temp)
-                console.log('new node', node)
-            }
+            // if (number == count) {
+            //     console.log('temp', temp)
+            //     console.log('new node', node)
+            // }
 
             if (number == count) {
                 node.next = temp.next
@@ -45,6 +45,9 @@ class Linkedlist {
                 // if (node.next == null) {
                 //     this.tail = node
                 // }
+                temp = null
+
+                break
             }
             temp = temp.next
             count++
@@ -63,7 +66,7 @@ linkedlist.createNode(new Node(3))
 linkedlist.createNode(new Node(4))
 linkedlist.createNode(new Node(5))
 
-linkedlist.addAtNumber(1, new Node(9))
+linkedlist.addAtNumber(3, new Node(9))
 
 
 linkedlist.displayNodes()
